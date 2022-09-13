@@ -363,4 +363,6 @@ FROM estoque
 INNER JOIN fornecedordisponibilizandopecas
 ON estoque.idestoque=fornecedordisponibilizandopecas.idpecas;
 
+SELECT * FROM clientepessoafisica
+ORDER BY clientepessoajurica ASC, Nomefantasia DESC;
 

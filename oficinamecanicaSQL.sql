@@ -350,10 +350,10 @@ values
 
  SELECT * FROM clientepessoafisica;
  
-SELECT COUNT (pessoafisica), nome
+SELECT COUNT (idclientepessoafisica), nome
 FROM clientepessoafisica
 GROUP BY nome
-HAVING COUNT (idpessoafisica) > 3;
+HAVING COUNT (idclientepessoafisica) > 03;
 
 SELECT * FROM clientepessoafisica
 WHERE Nome='Fulado de tal 2';

@@ -38,7 +38,6 @@ values
 (004,'Empresa 4 LTDA','Nome Fantasia 4',210459712014578,249945-6214)
 ;
 
-
 create table ordemdeservico (
 idordemdeservico int not null,
 idclientepessoafisica int not null,
@@ -69,9 +68,6 @@ values
 (7,null,003,'Nivus','AA','Volkswagem',12-09-2022,'Não', 13-09-2022),
 (8,null,004,'Voyage','AA','Volkswagem',13-09-2022,'Não', 14-09-2022)
 ;
-
-
-
 
 create table servicos (
 idservico int, 
@@ -163,7 +159,6 @@ primary key (idfornecedordisponibilizandopecas,idpecas,idfornecedor),
 constraint fk_fornecedordisponibilizandopecas_idpecas foreign key (idpecas) references estoque (idpecas),
 constraint fk_fornecedordisponibilizandopecas_idfornecedor foreign key (idfornecedor) references fornecedor (idfornecedor)
 );
-
 
 insert into fornecedordisponibilizandopecas (idfornecedordisponibilizandopecas,idpecas,idfornecedor,nome,quantidade,descricao)
 values 
@@ -322,9 +317,7 @@ values
 (null,'X2',null,null,null,null,null),
 (null,'X2',null,null,null,null,null)
 ;
-
-
-     create table Pix (
+    create table Pix (
     Idpix int,
     Idformadepagamento int,
     Chave varchar (255),

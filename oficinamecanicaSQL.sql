@@ -334,7 +334,7 @@ WHERE Nome='Fulado de tal 2';
 SELECT estoque.idestoque,fornecedordisponibilizandopecas.idpecas,estoque.quantidade
 FROM estoque
 INNER JOIN fornecedordisponibilizandopecas
-ON estoque.idestoque=fornecedordisponibilizandopecas.idpecas;
+ON estoque.idestoque=idpecas.fornecedordisponibilizandopecas;
 
 SELECT * FROM clientepessoafisica
 ORDER BY clientepessoajurica ASC, Nomefantasia DESC;

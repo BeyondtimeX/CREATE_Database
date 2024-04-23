@@ -321,21 +321,5 @@ insert into Pix (IdPix, IdFormaDePagamento, Chave) values
 
 -----------------------------------------------
 
- SELECT * FROM clientepessoafisica;
- 
-SELECT COUNT (idclientepessoafisica), nome
-FROM clientepessoafisica
-GROUP BY nome
-HAVING COUNT (idclientepessoafisica) > 03;
 
-SELECT * FROM clientepessoafisica
-WHERE Nome='Fulado de tal 2';
-
-SELECT estoque.idestoque,fornecedordisponibilizandopecas.idpecas,estoque.quantidade
-FROM estoque
-INNER JOIN fornecedordisponibilizandopecas
-ON estoque.idestoque=idpecas.fornecedordisponibilizandopecas;
-
-SELECT * FROM clientepessoafisica
-ORDER BY clientepessoajurica ASC, Nomefantasia DESC;
 

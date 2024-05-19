@@ -87,7 +87,7 @@ FROM clientepessoafisica
 GROUP BY Datadenascimento
 HAVING COUNT(*) > 1;
 
-Exemplo 1: Utilizando CASE WHEN
+ Utilizando CASE WHEN
 SELECT 
     Nome,
     CASE 
@@ -97,7 +97,7 @@ SELECT
 FROM 
     clientepessoafisica;
 
-Exemplo 2: Subconsulta
+ESubconsulta
 SELECT 
     veiculo.Modelo,
     veiculo.Placa,
@@ -111,7 +111,7 @@ JOIN
 WHERE 
     Situacaoatual IS NOT NULL;
 
-Exemplo 3: Subconsulta com CASE WHEN
+ Subconsulta com CASE WHEN
 
 SELECT 
     Nome,
@@ -125,4 +125,14 @@ SELECT
 FROM 
     clientepessoajuridica;
 
+Subconsulta Correlacionada
+SELECT 
+    veiculo.Modelo,
+    veiculo.Placa,
+    (SELECT Iniciodamanutencao 
+     FROM veiculoemmanutencao 
+     WHERE veiculoemmanutencao.Idveiculo = veiculo.Idveiculo 
+     AND ROWNUM = 1) AS DataInicioManutencao
+FROM 
+    veiculo;
 

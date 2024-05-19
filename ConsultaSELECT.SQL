@@ -86,3 +86,43 @@ SELECT Datadenascimento, COUNT(*) AS NumeroDeClientes
 FROM clientepessoafisica
 GROUP BY Datadenascimento
 HAVING COUNT(*) > 1;
+
+Exemplo 1: Utilizando CASE WHEN
+SELECT 
+    Nome,
+    CASE 
+        WHEN Datadenascimento < TO_DATE('2000-01-01', 'YYYY-MM-DD') THEN 'Nascido antes de 2000'
+        ELSE 'Nascido em ou depois de 2000'
+    END AS StatusNascimento
+FROM 
+    clientepessoafisica;
+
+Exemplo 2: Subconsulta
+SELECT 
+    veiculo.Modelo,
+    veiculo.Placa,
+    (SELECT Nome 
+     FROM quadrodecolaboradores 
+     WHERE quadrodecolaboradores.Idmecanicoresponsavel = veiculoemmanutencao.Nomedomecanicoresponsavel) AS NomeMecanico
+FROM 
+    veiculoemmanutencao
+JOIN 
+    veiculo ON veiculo.Idveiculo = veiculoemmanutencao.Idveiculo
+WHERE 
+    Situacaoatual IS NOT NULL;
+
+Exemplo 3: Subconsulta com CASE WHEN
+
+SELECT 
+    Nome,
+    'Pessoa Física' AS TipoCliente
+FROM 
+    clientepessoafisica
+UNION ALL
+SELECT 
+    Razaosocial AS Nome,
+    'Pessoa Jurídica' AS TipoCliente
+FROM 
+    clientepessoajuridica;
+
+

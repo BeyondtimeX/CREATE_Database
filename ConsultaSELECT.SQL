@@ -97,7 +97,7 @@ SELECT
 FROM 
     clientepessoafisica;
 
-ESubconsulta
+Subconsulta
 SELECT 
     veiculo.Modelo,
     veiculo.Placa,

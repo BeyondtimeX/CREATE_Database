@@ -1,3 +1,5 @@
+**ORACLE**
+
 Consultas com INNER JOIN
 Exemplo 1: Lista de Veículos em Manutenção com seus Mecânicos Responsáveis
 SELECT v.Idveiculo, v.Marca, v.Modelo, q.Nome
